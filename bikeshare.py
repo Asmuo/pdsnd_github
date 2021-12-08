@@ -283,7 +283,7 @@ def raw_data(df):
     Args:
         (DataFrame) - df
     """
-
+    pd.set_option('display.max_columns', 200)
     for chunk in chunker(df, 5):
         print(chunk)
 
