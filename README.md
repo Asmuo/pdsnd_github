@@ -1,8 +1,7 @@
 ### Date created
 2021-12-08
 
-### Project Title
-Udacity Bikeshare python project.
+### Udacity Bikeshare python project
 
 ### Description
 This project allows you to extract usefull information about bikeshare data by interacting with terminal.
