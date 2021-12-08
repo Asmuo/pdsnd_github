@@ -66,6 +66,7 @@ STATISTIC_TEXT = ( clr.Fore.YELLOW + 'time' + clr.Fore.RESET,
                    clr.Fore.YELLOW + 'user information' + clr.Fore.RESET,
                    clr.Fore.YELLOW + 'raw data' + clr.Fore.RESET )
 
+PRINT_LINES_MSG = '-' * 40
 
 def error_message(word):
     """
@@ -79,7 +80,7 @@ def error_message(word):
     formatted_word = clr.Fore.RED + '"{}"'.format(word) + clr.Fore.RESET
     print('\nINCORRECT VALUE! {} is not a valid value!'.format(formatted_word))
     print('Please check for spelling mistakes and try again.\n')
-    print('-' * 40)    
+    print(PRINT_LINES_MSG)    
 
 
 def get_filters():
@@ -91,9 +92,9 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('-' * 40)
+    print(PRINT_LINES_MSG)
     print('Hello! Let\'s explore some US bikeshare data!')
-    print('-' * 40, '')
+    print(PRINT_LINES_MSG)
 
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
@@ -123,7 +124,7 @@ def get_filters():
         else:
             error_message(day_input)
 
-    print('-' * 40)
+    print(PRINT_LINES_MSG)
     return city, month, day
 
 
@@ -175,7 +176,7 @@ def time_stats(df):
     print('{} is the peak starting hour in the chosen period.'.format(start_h_msg))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(PRINT_LINES_MSG)
 
 
 def station_stats(df):
@@ -203,7 +204,7 @@ def station_stats(df):
     print('{} & {} are the most frequently used combination of starting & ending route stations.'.format(start_station_msg, end_station_msg))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(PRINT_LINES_MSG)
 
 
 def trip_duration_stats(df):
@@ -223,7 +224,7 @@ def trip_duration_stats(df):
     print('Average time per travel in the selected period is: {}'.format(mean_travel_msg))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(PRINT_LINES_MSG)
 
 
 def user_stats(df):
@@ -263,7 +264,7 @@ def user_stats(df):
         print(clr.Fore.RED + 'There is data about Users year of birth in this city!' + clr.Fore.RESET)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print(PRINT_LINES_MSG)
 
 
 def chunker(df, chunk_size):
